@@ -86,8 +86,8 @@ class CircularCountDownTimer extends StatefulWidget {
   */
   final Function(Function(Duration duration) defaultFormatterFunction,
       Duration duration)? timeFormatterFunction;
-
   const CircularCountDownTimer({
+    Key? key,
     required this.width,
     required this.height,
     required this.duration,
@@ -108,12 +108,38 @@ class CircularCountDownTimer extends StatefulWidget {
     this.strokeCap = StrokeCap.butt,
     this.textStyle,
     this.textAlign = TextAlign.left,
-    super.key,
     this.isTimerTextShown = true,
     this.autoStart = true,
     this.textFormat,
     this.controller,
-  }) : assert(initialDuration <= duration);
+  }) : super(key: key);
+  // const CircularCountDownTimer({
+  //   required this.width,
+  //   required this.height,
+  //   required this.duration,
+  //   required this.fillColor,
+  //   required this.ringColor,
+  //   this.timeFormatterFunction,
+  //   this.backgroundColor,
+  //   this.fillGradient,
+  //   this.ringGradient,
+  //   this.backgroundGradient,
+  //   this.initialDuration = 0,
+  //   this.isReverse = false,
+  //   this.isReverseAnimation = false,
+  //   this.onComplete,
+  //   this.onStart,
+  //   this.onChange,
+  //   this.strokeWidth = 5.0,
+  //   this.strokeCap = StrokeCap.butt,
+  //   this.textStyle,
+  //   this.textAlign = TextAlign.left,
+  //   super.key,
+  //   this.isTimerTextShown = true,
+  //   this.autoStart = true,
+  //   this.textFormat,
+  //   this.controller,
+  // }) : assert(initialDuration <= duration);
 
   @override
   CircularCountDownTimerState createState() => CircularCountDownTimerState();
